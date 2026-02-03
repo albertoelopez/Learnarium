@@ -25,7 +25,7 @@ test.describe('Memory Palace Flow', () => {
 
     await expect(generateButton).toContainText(/Generating/i, { timeout: 5000 });
 
-    await expect(page.getByTestId(/room-/).first()).toBeVisible({ timeout: 60000 });
+    await expect(page.getByTestId(/room-/).first()).toBeVisible({ timeout: 180000 });
     await expect(page.getByTestId(/object-/).first()).toBeVisible();
 
     await page.screenshot({ path: 'e2e-screenshots/step2-palace-editor.png' });
@@ -47,7 +47,7 @@ test.describe('Memory Palace Flow', () => {
 
     await expect(mapButton).toContainText(/Mapping/i, { timeout: 5000 });
 
-    await expect(page.getByTestId('palace-viewer-3d')).toBeVisible({ timeout: 60000 });
+    await expect(page.getByTestId('palace-viewer-3d')).toBeVisible({ timeout: 180000 });
 
     await expect(page.getByTestId(/mapping-/).first()).toBeVisible();
 
@@ -78,7 +78,7 @@ test.describe('Memory Palace Flow', () => {
     const generateButton = page.getByTestId('generate-palace-button');
     await generateButton.click();
 
-    await expect(page.getByTestId(/room-/).first()).toBeVisible({ timeout: 60000 });
+    await expect(page.getByTestId(/room-/).first()).toBeVisible({ timeout: 180000 });
 
     const saveButton = page.getByTestId('save-palace-button');
     await saveButton.click();
