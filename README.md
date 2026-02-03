@@ -22,23 +22,6 @@ Transform your learning with the ancient Method of Loci (Memory Palace technique
 
 ---
 
-## Screenshots
-
-<div align="center">
-  <img src="docs/images/hero.png" alt="Learnarium Hero" width="800"/>
-  <p><em>Modern UI with step-by-step workflow</em></p>
-</div>
-
-<div align="center">
-  <img src="docs/images/palace-editor.png" alt="Palace Editor" width="800"/>
-  <p><em>AI-generated memory palace with rooms and objects</em></p>
-</div>
-
-<div align="center">
-  <img src="docs/images/3d-view.png" alt="3D Visualization" width="800"/>
-  <p><em>Interactive 3D memory palace navigation</em></p>
-</div>
-
 ## Features
 
 - **AI Palace Generation** - Describe any familiar space and AI generates a structured memory palace
