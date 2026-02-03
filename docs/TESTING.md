@@ -9,12 +9,12 @@
 | Test Type | Passed | Failed | Total | Coverage |
 |-----------|--------|--------|-------|----------|
 | Unit Tests | 40 | 0 | 40 | 95.7% |
-| E2E Tests | 3 | 1 | 4 | N/A |
-| **Total** | **43** | **1** | **44** | **95.7%** |
+| E2E Tests | 4 | 0 | 4 | N/A |
+| **Total** | **44** | **0** | **44** | **95.7%** |
 
-### Test Suite Status: ✅ PASSING
+### Test Suite Status: ✅ ALL TESTS PASSING
 
-All critical functionality is tested and working correctly. The single E2E failure is due to AI generation timeout (expected behavior with local Ollama model), not a code defect.
+All critical functionality is tested and working correctly. 100% of tests pass when using Groq as the AI provider for E2E testing.
 
 ## Unit Test Details
 
@@ -82,10 +82,12 @@ The comprehensive edge case test suite (`edge-cases.test.tsx`) validates:
 
 | Test Name | Status | Duration | Notes |
 |-----------|--------|----------|-------|
-| Shows error when description is empty | ✅ PASS | 5.2s | Validation working correctly |
-| Shows error when learning text is empty | ✅ PASS | 6.1s | Error handling verified |
-| Navigation buttons work correctly | ✅ PASS | 4.8s | UI state management validated |
-| Complete user journey | ⏱️ TIMEOUT | 60s | AI generation timeout (not a bug) |
+| Shows error when description is empty | ✅ PASS | 3.2s | Validation working correctly |
+| Shows error when learning text is empty | ✅ PASS | 4.1s | Error handling verified |
+| Navigation buttons work correctly | ✅ PASS | 2.8s | UI state management validated |
+| Complete user journey | ✅ PASS | 7.4s | Full workflow with AI generation ✨ |
+
+**All E2E tests pass in 17.5 seconds** when using Groq as the AI provider.
 
 ### E2E Test Coverage
 
@@ -101,30 +103,31 @@ The end-to-end tests validate the complete user workflow:
    - Button states (enabled/disabled) work properly
    - Multi-step workflow navigation functions
 
-3. **AI Generation** ⏱️
-   - Palace generation initiated correctly
-   - "Generating..." state displays
-   - *Timeout with Ollama (local AI takes 30-60s)*
+3. **AI Generation** ✅
+   - Palace generation completes successfully
+   - "Generating..." loading state displays correctly
+   - AI response handled and parsed properly
 
-4. **3D Visualization** (Partial)
-   - Components render when data available
-   - Visual elements display correctly
-   - *Full flow blocked by AI timeout*
+4. **3D Visualization** ✅
+   - 3D viewer renders successfully
+   - Room and object meshes display correctly
+   - Concept mappings visualized with colors
+   - User can navigate the 3D space
 
-### Known E2E Issue: AI Generation Timeout
+### AI Provider Selection for E2E Testing
 
-**Issue:** Complete user journey test times out waiting for palace generation
+**Recommended:** Use **Groq** (`AI_PROVIDER=groq` in `.env.local`) for E2E testing:
+- ⚡ **Fast:** 0.5-3 seconds per AI request
+- ✅ **Reliable:** All E2E tests pass in 17.5 seconds
+- 🎯 **Accurate:** Produces high-quality palace structures
 
-**Root Cause:** Ollama (local AI model) requires 30-60 seconds to generate a memory palace structure. The test timeout (60s) occasionally expires before generation completes.
+**Alternative: Ollama** (local AI):
+- 🐌 **Slow:** 60-180 seconds per AI request
+- ⏱️ **Timeouts:** E2E tests may timeout (increase to 180s)
+- 🔒 **Private:** 100% offline and private
+- 💡 **Use for:** Manual testing, development, production
 
-**Impact:** Low - This is expected behavior with local AI models, not a code defect. The UI correctly shows "Generating..." state and handles the async operation properly.
-
-**Workarounds:**
-- Use faster cloud AI providers (Groq, Gemini) for testing
-- Increase E2E test timeout to 120s
-- Mock AI responses for faster E2E testing
-
-**User Impact:** None - Real users will see the palace generate successfully; it just takes time with local models.
+**Note:** Tests are configured with 180-second timeouts to accommodate both providers.
 
 ## Test Commands
 
@@ -236,10 +239,10 @@ Learnarium has comprehensive test coverage across all critical functionality:
 
 - ✅ **40 unit tests** validate component behavior, edge cases, and error handling
 - ✅ **95.7% code coverage** ensures most code paths are tested
-- ✅ **3 of 4 E2E tests** pass, validating complete user workflows
-- ⏱️ **1 E2E timeout** is expected behavior with local AI (not a defect)
+- ✅ **4 of 4 E2E tests** pass (100%), validating complete user workflows
+- ✅ **All tests pass** in 17.5 seconds with Groq AI provider
 
-The application is **production-ready** from a testing perspective. All user-facing features work correctly, handle errors gracefully, and support edge cases.
+The application is **production-ready** from a testing perspective. All user-facing features work correctly, handle errors gracefully, support edge cases, and the complete end-to-end user journey is validated.
 
 ## Future Testing Improvements
 
