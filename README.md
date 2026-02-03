@@ -1,5 +1,13 @@
 # Learnarium
 
+<div align="center">
+  <img src="docs/images/hero-banner.svg" alt="Learnarium - AI-Powered Memory Palace Learning" width="100%"/>
+</div>
+
+<br/>
+
+<div align="center">
+
 **AI-Powered Memory Palace Learning Platform**
 
 Transform your learning with the ancient Method of Loci (Memory Palace technique) enhanced by modern AI. Learnarium helps you create personalized 3D memory palaces from familiar spaces and maps learning content to memorable visual associations.
@@ -9,6 +17,27 @@ Transform your learning with the ancient Method of Loci (Memory Palace technique
 ![React](https://img.shields.io/badge/React-19.0-61DAFB?style=flat-square&logo=react)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC?style=flat-square&logo=tailwind-css)
 ![Three.js](https://img.shields.io/badge/Three.js-R3F-black?style=flat-square&logo=three.js)
+
+</div>
+
+---
+
+## Screenshots
+
+<div align="center">
+  <img src="docs/images/hero.png" alt="Learnarium Hero" width="800"/>
+  <p><em>Modern UI with step-by-step workflow</em></p>
+</div>
+
+<div align="center">
+  <img src="docs/images/palace-editor.png" alt="Palace Editor" width="800"/>
+  <p><em>AI-generated memory palace with rooms and objects</em></p>
+</div>
+
+<div align="center">
+  <img src="docs/images/3d-view.png" alt="3D Visualization" width="800"/>
+  <p><em>Interactive 3D memory palace navigation</em></p>
+</div>
 
 ## Features
 

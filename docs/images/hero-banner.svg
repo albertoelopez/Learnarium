@@ -1,0 +1,102 @@
+<svg width="1200" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#7c3aed;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="text" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e0e7ff;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="400" fill="url(#bg)"/>
+
+  <!-- Decorative neural network pattern -->
+  <g opacity="0.1" stroke="#ffffff" stroke-width="1" fill="none">
+    <circle cx="100" cy="100" r="40"/>
+    <circle cx="300" cy="150" r="35"/>
+    <circle cx="500" cy="80" r="45"/>
+    <circle cx="700" cy="140" r="38"/>
+    <circle cx="900" cy="100" r="42"/>
+    <circle cx="1100" cy="130" r="36"/>
+    <line x1="100" y1="100" x2="300" y2="150"/>
+    <line x1="300" y1="150" x2="500" y2="80"/>
+    <line x1="500" y1="80" x2="700" y2="140"/>
+    <line x1="700" y1="140" x2="900" y2="100"/>
+    <line x1="900" y1="100" x2="1100" y2="130"/>
+  </g>
+
+  <!-- Brain icon -->
+  <g transform="translate(420, 120)" filter="url(#glow)">
+    <path d="M40 0 C20 0, 0 15, 0 35 C0 45, 5 55, 15 60 C10 65, 8 72, 10 78 C12 84, 18 88, 25 88 C25 95, 30 100, 40 100 C50 100, 55 95, 55 88 C62 88, 68 84, 70 78 C72 72, 70 65, 65 60 C75 55, 80 45, 80 35 C80 15, 60 0, 40 0 Z"
+          fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    <circle cx="25" cy="40" r="3" fill="#ffffff"/>
+    <circle cx="55" cy="40" r="3" fill="#ffffff"/>
+    <path d="M30 55 Q40 60, 50 55" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- Building/Palace icon -->
+  <g transform="translate(680, 130)" filter="url(#glow)">
+    <rect x="10" y="30" width="30" height="50" fill="#60a5fa" stroke="#3b82f6" stroke-width="2"/>
+    <polygon points="25,10 5,30 45,30" fill="#93c5fd" stroke="#3b82f6" stroke-width="2"/>
+    <rect x="18" y="50" width="6" height="8" fill="#1e3a8a"/>
+    <rect x="30" y="50" width="6" height="8" fill="#1e3a8a"/>
+    <rect x="18" y="40" width="6" height="6" fill="#1e3a8a"/>
+    <rect x="30" y="40" width="6" height="6" fill="#1e3a8a"/>
+  </g>
+
+  <!-- Main title -->
+  <text x="600" y="220" font-family="Arial, sans-serif" font-size="72" font-weight="bold"
+        fill="url(#text)" text-anchor="middle" letter-spacing="4">
+    LEARNARIUM
+  </text>
+
+  <!-- Subtitle -->
+  <text x="600" y="260" font-family="Arial, sans-serif" font-size="28"
+        fill="#e0e7ff" text-anchor="middle" opacity="0.9">
+    AI-Powered Memory Palace Learning
+  </text>
+
+  <!-- Feature badges -->
+  <g transform="translate(300, 300)">
+    <rect x="0" y="0" width="120" height="30" rx="15" fill="#10b981" opacity="0.9"/>
+    <text x="60" y="20" font-family="Arial, sans-serif" font-size="14" font-weight="600"
+          fill="#ffffff" text-anchor="middle">🧠 AI-Powered</text>
+  </g>
+
+  <g transform="translate(440, 300)">
+    <rect x="0" y="0" width="100" height="30" rx="15" fill="#8b5cf6" opacity="0.9"/>
+    <text x="50" y="20" font-family="Arial, sans-serif" font-size="14" font-weight="600"
+          fill="#ffffff" text-anchor="middle">🎨 3D View</text>
+  </g>
+
+  <g transform="translate(560, 300)">
+    <rect x="0" y="0" width="140" height="30" rx="15" fill="#ec4899" opacity="0.9"/>
+    <text x="70" y="20" font-family="Arial, sans-serif" font-size="14" font-weight="600"
+          fill="#ffffff" text-anchor="middle">⚡ 100% Offline</text>
+  </g>
+
+  <g transform="translate(720, 300)">
+    <rect x="0" y="0" width="160" height="30" rx="15" fill="#f59e0b" opacity="0.9"/>
+    <text x="80" y="20" font-family="Arial, sans-serif" font-size="14" font-weight="600"
+          fill="#ffffff" text-anchor="middle">🔬 Science-Backed</text>
+  </g>
+
+  <!-- Sparkles -->
+  <g fill="#fbbf24" opacity="0.8">
+    <circle cx="350" cy="180" r="3"/>
+    <circle cx="850" cy="190" r="4"/>
+    <circle cx="250" cy="250" r="2"/>
+    <circle cx="950" cy="240" r="3"/>
+  </g>
+</svg>
