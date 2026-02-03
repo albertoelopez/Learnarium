@@ -34,6 +34,7 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@huggingface/inference": "^4.13.11",
     "@jest/globals": "^29.7.0",
     "@playwright/test": "^1.49.1",
     "@testing-library/jest-dom": "^6.6.3",
