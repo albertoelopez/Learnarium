@@ -10,7 +10,7 @@ test.describe('Memory Palace Flow', () => {
       page.getByRole('heading', { name: /Vizloci/i })
     ).toBeVisible();
 
-    await expect(page.getByText(/Step 1: Describe Your Space/i)).toBeVisible();
+    await expect(page.getByText(/Describe Your Space/i)).toBeVisible();
 
     const descriptionInput = page.getByTestId('palace-description-input');
     await expect(descriptionInput).toBeVisible();
@@ -23,13 +23,9 @@ test.describe('Memory Palace Flow', () => {
     await expect(generateButton).toBeEnabled();
     await generateButton.click();
 
-    await expect(generateButton).toHaveText(/Generating.../);
+    await expect(generateButton).toContainText(/Generating/i, { timeout: 5000 });
 
-    await expect(page.getByText(/Step 2: Review Your Palace/i)).toBeVisible({
-      timeout: 60000,
-    });
-
-    await expect(page.getByTestId(/room-/).first()).toBeVisible();
+    await expect(page.getByTestId(/room-/).first()).toBeVisible({ timeout: 60000 });
     await expect(page.getByTestId(/object-/).first()).toBeVisible();
 
     await page.screenshot({ path: 'e2e-screenshots/step2-palace-editor.png' });
@@ -38,7 +34,7 @@ test.describe('Memory Palace Flow', () => {
     await saveButton.click();
 
     await expect(
-      page.getByText(/Step 3: Map Your Learning Content/i)
+      page.getByText(/Map Your Learning Content/i)
     ).toBeVisible();
 
     const learningTextInput = page.getByTestId('learning-text-input');
@@ -49,13 +45,9 @@ test.describe('Memory Palace Flow', () => {
     const mapButton = page.getByTestId('map-concepts-button');
     await mapButton.click();
 
-    await expect(mapButton).toHaveText(/Mapping Concepts.../);
+    await expect(mapButton).toContainText(/Mapping/i, { timeout: 5000 });
 
-    await expect(page.getByText(/Step 4: Your Memory Palace/i)).toBeVisible({
-      timeout: 60000,
-    });
-
-    await expect(page.getByTestId('palace-viewer-3d')).toBeVisible();
+    await expect(page.getByTestId('palace-viewer-3d')).toBeVisible({ timeout: 60000 });
 
     await expect(page.getByTestId(/mapping-/).first()).toBeVisible();
 
@@ -86,15 +78,13 @@ test.describe('Memory Palace Flow', () => {
     const generateButton = page.getByTestId('generate-palace-button');
     await generateButton.click();
 
-    await expect(page.getByText(/Step 2: Review Your Palace/i)).toBeVisible({
-      timeout: 60000,
-    });
+    await expect(page.getByTestId(/room-/).first()).toBeVisible({ timeout: 60000 });
 
     const saveButton = page.getByTestId('save-palace-button');
     await saveButton.click();
 
     await expect(
-      page.getByText(/Step 3: Map Your Learning Content/i)
+      page.getByText(/Map Your Learning Content/i)
     ).toBeVisible();
 
     const mapButton = page.getByTestId('map-concepts-button');
@@ -109,14 +99,14 @@ test.describe('Memory Palace Flow', () => {
   test('navigation buttons work correctly', async ({ page }) => {
     await page.goto('/');
 
-    const step1Button = page.getByRole('button', { name: /1\. Create Palace/i });
-    const step2Button = page.getByRole('button', { name: /2\. Edit Palace/i });
-    const step3Button = page.getByRole('button', { name: /3\. Map Concepts/i });
-    const step4Button = page.getByRole('button', { name: /4\. View in 3D/i });
+    const step1Button = page.getByRole('button', { name: /Create Palace/i });
+    const step2Button = page.getByRole('button', { name: /Edit Palace/i });
+    const step3Button = page.getByRole('button', { name: /Map Concepts/i });
+    const step4Button = page.getByRole('button', { name: /View in 3D/i });
 
-    expect(await step1Button.isDisabled()).toBe(true);
-    expect(await step2Button.isDisabled()).toBe(true);
-    expect(await step3Button.isDisabled()).toBe(true);
-    expect(await step4Button.isDisabled()).toBe(true);
+    await expect(step1Button).toBeDisabled();
+    await expect(step2Button).toBeDisabled();
+    await expect(step3Button).toBeDisabled();
+    await expect(step4Button).toBeDisabled();
   });
 });

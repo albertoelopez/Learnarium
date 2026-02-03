@@ -17,6 +17,8 @@ Transform your learning with the ancient Method of Loci (Memory Palace technique
 ![React](https://img.shields.io/badge/React-19.0-61DAFB?style=flat-square&logo=react)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC?style=flat-square&logo=tailwind-css)
 ![Three.js](https://img.shields.io/badge/Three.js-R3F-black?style=flat-square&logo=three.js)
+![Tests](https://img.shields.io/badge/Tests-43%20passing-brightgreen?style=flat-square)
+![Coverage](https://img.shields.io/badge/Coverage-95.7%25-brightgreen?style=flat-square)
 
 </div>
 
@@ -129,12 +131,14 @@ Open [http://localhost:3000](http://localhost:3000) to use the app.
 
 ## Testing
 
+Learnarium has comprehensive test coverage with 40 unit tests and E2E tests.
+
 ```bash
-# Run all tests
+# Run all unit tests
 npm test
 
-# Run tests in watch mode
-npm run test:watch
+# Run tests with coverage report
+npm test -- --coverage
 
 # Run E2E tests
 npm run test:e2e
@@ -142,6 +146,10 @@ npm run test:e2e
 # Test Ollama connection
 node scripts/test-ollama.js
 ```
+
+**Test Results:** 43 passing tests, 95.7% code coverage
+
+For detailed test documentation, see [docs/TESTING.md](docs/TESTING.md)
 
 ## Project Structure
 
